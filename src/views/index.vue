@@ -22,10 +22,10 @@
                 router.push('vueuse')
             }
             const goZb=()=>{
-                //router.push('zb')
+                router.push('zb')
             }
             const goPlayer=()=>{
-                //router.push('Dplayer')
+                router.push('db')
             }
             return{
                 goTest,

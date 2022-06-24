@@ -25,6 +25,26 @@ const routes: Array<RouteRecordRaw> = [
                 requireAuth: true
             },
             component: () => import('@/views/vueUse.vue')
+        },
+        {
+            path: '/zb',
+            name: 'zb',
+            meta: {
+                title: '直播',
+                keepAlive: true,
+                requireAuth: true
+            },
+            component: () => import('@/views/zb.vue')
+        },
+        {
+            path: '/db',
+            name: 'db',
+            meta: {
+                title: '点播',
+                keepAlive: true,
+                requireAuth: true
+            },
+            component: () => import('@/views/db.vue')
         }
     ]
 export const createRouter = (type: 'client' | 'server'): Router =>

@@ -16,7 +16,7 @@ export const render = async (
     app.use(router);
     await router.push(ctx.path);
     await router.isReady();
-    console.log('~~~~:',ctx, manifest, '');
+    //console.log('~~~~:',ctx, manifest, '');
     // pinia
     const pinia = createStore();
     app.use(pinia);
