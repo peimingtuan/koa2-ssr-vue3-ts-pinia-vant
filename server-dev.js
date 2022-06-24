@@ -1,9 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-
 const Koa = require('koa');
 const koaConnect = require('koa-connect');
-
 const vite = require('vite');
 
 (async () => {

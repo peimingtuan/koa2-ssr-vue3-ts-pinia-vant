@@ -3,7 +3,7 @@ import { defineStore } from 'pinia';
 export default defineStore('user', {
     state: () => {
         return {
-            name: '张三',
+            name: 'Evan-Pei',
             age: 20
         };
     },

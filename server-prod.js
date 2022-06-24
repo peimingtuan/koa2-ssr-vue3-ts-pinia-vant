@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-
 const Koa = require('koa');
 const sendFile = require('koa-send');
-
 const path = require('path');
 const fs = require('fs');
 

@@ -101,9 +101,6 @@ const Koa = require('koa');
 ```
 
 4.  运行 `node server.js`
-5. 结果：
-![Untitled.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cae49df3d82444dc8a95f8f40f29f1ad~tplv-k3u1fbpfcp-watermark.image?)
-
 
 ## 渲染替换成项目根目录下的 `index.html`
 

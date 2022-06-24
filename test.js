@@ -18,7 +18,7 @@ const Koa = require('koa');
         ctx.body = html;
     });
 
-    app.listen(9000, () => {
-        console.log('server is listening in 9000');
+    app.listen(3000, () => {
+        console.log('server is listening in 3000');
     });
 })();

@@ -4,8 +4,9 @@
   "version": "0.0.1",
   "author": "Evan-Pei",
   "scripts": {
+    "test": "node test.js",
     "dev": "node server-dev.js",
-    "serve": "node server-prod.js",
+    "pro": "node server-prod.js",
     "build": "pnpm build:client && pnpm build:server",
     "build:client": "vite build --ssrManifest --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server --outDir dist/server",
@@ -30,6 +31,7 @@
     "koa-connect": "^2.1.0",
     "koa-send": "^5.0.1",
     "pinia": "^2.0.13",
+    "vant": "^3.5.1",
     "vue": "^3.2.25",
     "vue-router": "^4.0.14"
   },

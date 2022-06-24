@@ -2,14 +2,15 @@ import { createApp } from './main';
 import { renderToString } from '@vue/server-renderer';
 import type { ParameterizedContext } from 'koa';
 import { createRouter } from './router';
+import ant from "./utils/ant";
+import 'vant/lib/index.css'; // 全局引入样式
 import createStore from '@/store';
-console.log('createRouter:',createRouter)
 export const render = async (
     ctx: ParameterizedContext,
     manifest: Record<string, string[]>
 ): Promise<[string, string, string]> => {
     const { app } = createApp();
-
+    app.use(ant)
     // 路由注册
     const router = createRouter('server');
     app.use(router);

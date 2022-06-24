@@ -1,13 +1,15 @@
 import { createApp } from './main';
 import { createRouter } from './router';
 import createStore from '@/store';
-
+import ant from "./utils/ant";
+import 'vant/lib/index.css'; // 全局引入样式
 const router = createRouter('client');
 const pinia = createStore();
 
 const { app } = createApp();
 
 app.use(router);
+app.use(ant);
 app.use(pinia);
 
 // 初始化 pinia
