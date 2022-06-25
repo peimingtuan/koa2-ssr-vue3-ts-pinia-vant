@@ -1,4 +1,5 @@
 <template>
+<!--  <div>hello vu3+ts+vite</div>-->
     <RouterView />
 </template>
 
