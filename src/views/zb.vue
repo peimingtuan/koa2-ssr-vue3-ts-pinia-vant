@@ -22,13 +22,27 @@
         autoplay:true,
         theme:'#b7daff',
     })
+    let mediaStreamTrack=null
     //打开摄像头
     const openCamera=()=>{
-
+         navigator.mediaDevices.getDisplayMedia({
+          audio:false,
+          video:true,
+          //video:{facingMode:"environment"}
+        }).then((stream)=>{
+          console.log("stream:",stream)
+          mediaStreamTrack=stream
+          videoDemo.value.builtZb(stream)
+        }).catch(err=>{
+          console.log(err)
+        })
     }
     //关闭摄像头
     const closeCamera=()=>{
-
+      mediaStreamTrack.getVideoTracks().forEach((track)=>{
+        console.log("track:",track)
+        track.stop()
+      })
     }
 </script>
 <style lang="less" scoped>

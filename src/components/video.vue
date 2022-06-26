@@ -4,6 +4,8 @@
 
 <script lang="ts" setup>
     import {onMounted} from "vue"
+    // import Hls from 'hls.js'
+    // import "videojs-contrib-hls"
     //const props =  defineProps<{options:Item}>() //没有默认值
     interface Videoinfo{
         url:string,//视频链接
@@ -64,14 +66,35 @@
     })
     onMounted(():void=>{
         console.log(8888,)
-        const dp = new DPlayer(Object.assign({container: document.getElementById('dplayer')},props.options));
+        //const dp = new DPlayer(Object.assign({container: document.getElementById('dplayer')},props.options));
     })
     const init=()=>{
         console.log('init')
     }
+    //创建直播
+    const builtZb=(url)=>{
+      console.log('url:',url)
+      new DPlayer({
+        container: document.getElementById('dplayer'),
+        live:true,
+        video:{
+          url,
+          type:"customHls",
+          customType:{
+            customHls:(video,player)=>{
+              video.srcObject=url
+              video.onloadedmetadata=()=>{
+                video.play()
+              }
+            }
+          }
+        }
+      })
+    }
     defineExpose(
         {
-            init
+          init,
+          builtZb
         }
     )
 
