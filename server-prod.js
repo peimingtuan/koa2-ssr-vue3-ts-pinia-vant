@@ -24,6 +24,8 @@ const manifest = require('./dist/client/ssr-manifest.json');
         const [renderedHtml, state, preloadLinks] = await render(ctx, manifest);
 
         const html = template
+            .replace('/hls.js', '/assets/hls.js')
+            .replace('/DPlayer.min.js', '/assets/DPlayer.min.js')
             .replace('<!--preload-links-->', preloadLinks)
             .replace('<!--pinia-state-->', state)
             .replace('<!--app-html-->', renderedHtml);

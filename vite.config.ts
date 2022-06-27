@@ -20,6 +20,7 @@ export default defineConfig({
         // }),
         copy({
             targets: [
+                { src: './public/hls.js', dest: './dist/client/assets' },
                 { src: './public/DPlayer.min.js', dest: './dist/client/assets' }, //执行拷贝
             ]
         })

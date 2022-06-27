@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
     import {onMounted} from "vue"
-    // import Hls from 'hls.js'
+    //import hlsjs from 'hls.js'
     // import "videojs-contrib-hls"
     //const props =  defineProps<{options:Item}>() //没有默认值
     interface Videoinfo{
@@ -64,16 +64,18 @@
             })
         }
     })
+    let dp:any;
     onMounted(():void=>{
-        console.log(8888,)
         //const dp = new DPlayer(Object.assign({container: document.getElementById('dplayer')},props.options));
     })
     const init=()=>{
-        console.log('init')
+        dp.switchVideo({
+            url:'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
+            type: 'hls',
+        })
     }
     //创建直播
     const builtZb=(url)=>{
-      console.log('url:',url)
       new DPlayer({
         container: document.getElementById('dplayer'),
         live:true,
@@ -91,10 +93,21 @@
         }
       })
     }
+    //创建点播
+    const builtDb=()=>{
+        dp=new DPlayer({
+            container: document.getElementById('dplayer'),
+            live:false,
+            video:{
+                url:'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4',
+            }
+        })
+    }
     defineExpose(
         {
-          init,
-          builtZb
+            init,
+            builtZb,
+            builtDb
         }
     )
 

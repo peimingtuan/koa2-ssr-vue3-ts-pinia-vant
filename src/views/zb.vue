@@ -25,7 +25,7 @@
     let mediaStreamTrack=null
     //打开摄像头
     const openCamera=()=>{
-         navigator.mediaDevices.getDisplayMedia({
+         navigator.mediaDevices.getUserMedia({
           audio:false,
           video:true,
           //video:{facingMode:"environment"}

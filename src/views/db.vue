@@ -10,7 +10,7 @@
     </div>
 </template>
 <script lang="ts" setup="props">
-    import {reactive,ref} from "vue"
+    import {reactive,ref,onMounted} from "vue"
     import { useRouter } from "vue-router";
     import VideoDemo from "@/components/video.vue"
     const router = useRouter();
@@ -57,6 +57,9 @@
           }
         }
       ]
+    })
+    onMounted(():void=>{
+        videoDemo.value.builtDb()
     })
     //切换视频
     const changeVideo=()=>{

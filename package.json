@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node test.js",
     "dev": "node server-dev.js",
-    "pro": "node server-prod.js",
+    "prod": "node server-prod.js",
     "build": "pnpm build:client && pnpm build:server",
     "build:client": "vite build --ssrManifest --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server --outDir dist/server",
