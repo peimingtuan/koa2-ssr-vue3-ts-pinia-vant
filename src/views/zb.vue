@@ -16,12 +16,6 @@
         router.push("/");
     };
     const videoDemo=ref(null)
-    let options=reactive({
-        container:'',
-        live:false,
-        autoplay:true,
-        theme:'#b7daff',
-    })
     let mediaStreamTrack=null
     //打开摄像头
     const openCamera=()=>{

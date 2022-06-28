@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-    import {onMounted} from "vue"
+    import {reactive,onMounted} from "vue"
     //import hlsjs from 'hls.js'
     // import "videojs-contrib-hls"
     //const props =  defineProps<{options:Item}>() //没有默认值
@@ -50,20 +50,20 @@
             danmaku?:Danmakuinfo,
             contextmenu?:Array<Menu>
     }
-    const props=defineProps({
-        options:{
-            type:Object,
-            required:true,
-            default:()=>({
-                video: {
-                    url: 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4'//'http://localhost:4000/welcomeHome.mp4',
-                    //url:'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
-                    //type: 'customHls',
-                    //type: 'hls'
-                },
-            })
-        }
-    })
+    // const props=defineProps({
+    //     options:{
+    //         type:Object,
+    //         required:true,
+    //         default:()=>({
+    //             video: {
+    //                 url: 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4'//'http://localhost:4000/welcomeHome.mp4',
+    //                 //url:'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
+    //                 //type: 'customHls',
+    //                 //type: 'hls'
+    //             },
+    //         })
+    //     }
+    // })
     let dp:any;
     onMounted(():void=>{
         //const dp = new DPlayer(Object.assign({container: document.getElementById('dplayer')},props.options));
@@ -103,11 +103,26 @@
             }
         })
     }
+    //暂停、播放
+    const toggle=()=>{
+        dp.toggle()
+    }
+    //跳转指定时间
+    const seek=(time:number)=>{
+        dp.seek(time)
+    }
+    //返回当前播放时间
+    const currentTime=()=>{
+        console.log(dp.video.currentTime)
+    }
     defineExpose(
         {
             init,
             builtZb,
-            builtDb
+            builtDb,
+            toggle,
+            seek,
+            currentTime
         }
     )
 

@@ -67,15 +67,15 @@
     }
     //暂停、播放
     const setPlayer=()=>{
-
+        videoDemo.value.toggle()
     }
     //跳转指定时间
     const seekTime=()=>{
-
+        videoDemo.value.seek(90)
     }
     //返回当前播放时间
     const returnPlayTime=()=>{
-
+        videoDemo.value.currentTime()
     }
 </script>
 <style lang="less" scoped>
