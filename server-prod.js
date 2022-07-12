@@ -3,6 +3,7 @@ const Koa = require('koa');
 const sendFile = require('koa-send');
 const path = require('path');
 const fs = require('fs');
+const open = require("open");
 
 const resolve = (p) => path.resolve(__dirname, p);
 
@@ -34,5 +35,8 @@ const manifest = require('./dist/client/ssr-manifest.json');
         ctx.body = html;
     });
 
-    app.listen(8080, () => console.log('started server on http://localhost:8080'));
+    app.listen(8080, () => {
+        open("http://localhost:8080/","chrome")
+        console.log('started server on http://localhost:8080')
+    });
 })();

@@ -33,6 +33,7 @@
     "koa-connect": "^2.1.0",
     "koa-send": "^5.0.1",
     "less": "^4.1.3",
+    "open": "^8.4.0",
     "pinia": "^2.0.13",
     "rollup-plugin-copy": "^3.4.0",
     "vant": "^3.5.1",

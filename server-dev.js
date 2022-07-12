@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const open = require("open");
 const Koa = require('koa');
 const koaConnect = require('koa-connect');
 const vite = require('vite');
@@ -47,6 +48,7 @@ const vite = require('vite');
     });
 
     app.listen(9000, () => {
+        open("http://localhost:9000/","chrome")
         console.log('server is listening in 9000');
     });
 })();

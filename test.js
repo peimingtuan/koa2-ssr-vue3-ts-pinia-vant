@@ -1,6 +1,6 @@
 // const fs = require('fs');
 // const path = require('path');
-
+const open = require("open");
 const Koa = require('koa');
 
 (async () => {
@@ -26,6 +26,7 @@ const Koa = require('koa');
     });
 
     app.listen(3000, () => {
+        open("http://localhost:3000/","chrome")
         console.log('server is listening in 3000');
     });
 })();
